@@ -2,7 +2,7 @@
 <html>
   <body>
     <h3>Adicionar cursos</h3>
-    <form action="adicionaCurso">
+    <form action="adicionaCurso" method="post">
       Nome:<input name="nome">
       <form:errors path="curso.nome" cssStyle="color:red"/>
       <br />
