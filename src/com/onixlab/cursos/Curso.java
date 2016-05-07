@@ -1,11 +1,13 @@
 package com.onixlab.cursos;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Curso {
 	private Long id;
 	
-	@NotNull
+	@NotEmpty @Size(min=2)
 	private String nome;
 	
 	private Double cargaHoraria;
