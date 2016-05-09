@@ -11,10 +11,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @Table(name="cursos")
 public class Curso {
-	private Long id;
-	
 	@Id
 	@GeneratedValue
+	private Long id;
+	
 	@NotEmpty @Size(min=2)
 	private String nome;
 	
