@@ -1,12 +1,20 @@
 package com.onixlab.cursos;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
+@Table(name="cursos")
 public class Curso {
 	private Long id;
 	
+	@Id
+	@GeneratedValue
 	@NotEmpty @Size(min=2)
 	private String nome;
 	
