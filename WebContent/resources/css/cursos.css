@@ -1,0 +1,14 @@
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+
+/* Essa é uma pseudo-classe que está sendo utilizada para aplicar o estilo chamado de zebra-striped */
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}

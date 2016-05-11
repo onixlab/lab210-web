@@ -41,9 +41,11 @@ public class JdbcCursoDao {
 			PreparedStatement pstm = con.prepareStatement("select * from cursos");
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
+				Long id = rs.getLong("id");
 				String nome = rs.getString("nome");
 				Double cargaHoraria = rs.getDouble("cargahoraria");
 				Curso curso = new Curso();
+				curso.setId(id);
 				curso.setNome(nome);
 				curso.setCargaHoraria(cargaHoraria);
 				cursos.add(curso);
