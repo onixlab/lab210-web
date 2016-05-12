@@ -1,5 +1,6 @@
 package com.onixlab.cursos;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,41 +10,51 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="cursos")
+@Table(name = "cursos")
 public class Curso {
-	@Id
-	@GeneratedValue
-	private Long id;
-	
-	@NotEmpty @Size(min=2)
-	private String nome;
-	
-	private Double cargaHoraria;
+    @Id // primary key
+    @GeneratedValue // auto_increment
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    @NotEmpty
+    @Size(min = 2)
+    private String nome;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private Double cargaHoraria;
 
-	public String getNome() {
-		return nome;
-	}
+    // define nome da coluna, tipo e valor padrão no banco de dados
+    @Column(name = "ativo", columnDefinition = "tinyint default true")
+    private boolean ativo;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Double getCargaHoraria() {
-		return cargaHoraria;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setCargaHoraria(Double cargaHoraria) {
-		this.cargaHoraria = cargaHoraria;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	// getters and setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public Double getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(Double cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
 }
